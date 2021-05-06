@@ -1,0 +1,48 @@
+.skills {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.powers {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.title_skills {
+  color: white;
+  text-align: center;
+}
+
+.btn {
+  outline: none;
+  padding: 0;
+  border: 1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.attack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33.3333%;
+}
+
+.dexterity {
+  display: flex;
+  justify-content: space-between;
+  width: 66.6666%;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+}

@@ -1,0 +1,38 @@
+.name {
+  color: white;
+  font-family: 'Itim', cursive;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.about {
+  display: flex;
+  font-family: 'Itim', cursive;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.power {
+  color: white;
+  font-family: 'Itim', cursive;
+  font-size: 20px;
+  margin-left: 25px;
+  text-align: center;
+}
+
+.input {
+  width: 50%;
+  font-family: 'Itim', cursive;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  height: 25px;
+  font-size: 15px;
+  padding: 3px;
+}
+
+.additional {
+  margin-top: -10px;
+}

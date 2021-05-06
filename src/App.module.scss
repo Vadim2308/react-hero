@@ -1,0 +1,104 @@
+body {
+  margin: 0 auto;
+  border: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.main {
+  background: url('./assets/images/heroes/background.jpg');
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  &__inner {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__hero {
+    width: 50%;
+    height: 500px;
+    overflow: hidden;
+    margin-left: 105px;
+    padding: 15px;
+  }
+
+  .leftArrow {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    left: 0px;
+    cursor: pointer;
+    top: 210px;
+  }
+
+  .rightArrow {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    right: 600px;
+    cursor: pointer;
+    top: 210px;
+  }
+  &__info {
+    width: 50%;
+    height: 850px;
+    border: 5px solid #fff;
+    border-radius: 70px;
+    padding: 10px;
+  }
+}
+
+.choose {
+  position: absolute;
+  top: 550px;
+  left: 270px;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+  border-radius: 10px;
+  font-family: 'Pacifico', cursive;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #3498db;
+  border-bottom: 5px solid #2980b9;
+  text-shadow: 0px -2px #2980b9;
+
+  &:active {
+    transform: translate(0px, 5px);
+    border-bottom: 1px solid;
+  }
+}
