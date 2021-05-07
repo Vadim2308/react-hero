@@ -16,7 +16,7 @@ import AllHeroes from './components/heroes/AllHeroes';
 class App extends React.Component {
   state = {
     currentHero: 1,
-    disableInfo: true, // true
+    disableInfo: false, // true
   };
 
   allHeroes = [

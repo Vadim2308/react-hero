@@ -4,7 +4,7 @@ import classes from './skills.module.scss';
 //Images
 import powersImage from '../../assets/images/skills/power.png';
 
-function SkillsAttack({ power, onChangePower, attack, personageSkills }) {
+function SkillsAttack({ power, attack, personageSkills, onChangeSkills }) {
   const updatedPower = (power) => {
     if (power > 5) {
       power = 5;
@@ -14,8 +14,13 @@ function SkillsAttack({ power, onChangePower, attack, personageSkills }) {
 
   return (
     <div className={classes.attack}>
-      <button onClick={() => onChangePower(power)} className={classes.btn} type="button">
-        <img className={classes.powers} src={powersImage} alt="rows"></img>
+      <button className={classes.btn} type="button">
+        <img
+          onClick={(event) => onChangeSkills(event, attack, power, 'power')}
+          name="attack"
+          className={classes.powers}
+          src={powersImage}
+          alt="rows"></img>
       </button>
       <h3 className={classes.title_skills}>
         Атака: {attack} из {updatedPower(power)}

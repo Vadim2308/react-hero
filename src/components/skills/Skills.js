@@ -55,52 +55,24 @@ class Skills extends Component {
     }
   }
 
-  // Вот эти нижние 3 функции примерно одинаковые...принимают число, и если оно не удовлетворяют ифам, то делают +1 и записывают в стейт. Можно их как то сделать универсальными ?
+  onChangeSkills = (event, skills, baseParams, baseParamsString) => {
+    const value = baseParamsString.toString();
+    const name = event.target.name;
 
-  onChangePower = (power) => {
-    if (power === this.state.attack || this.state.attack >= 5) {
+    if (skills === baseParams || skills >= 5) {
       return this.setState((prevState) => {
         return {
-          attack: (prevState.attack = 0),
+          ...prevState,
+          [name]: (prevState[name] = 0),
         };
       });
     }
-    return this.setState((prevState) => {
-      return {
-        attack: prevState.attack + 1,
-        power: (prevState.power = power),
-      };
-    });
-  };
 
-  onChangeStels = (dexterity) => {
-    if (dexterity === this.state.stels || this.state.stels >= 5) {
-      return this.setState((prevState) => {
-        return {
-          stels: (prevState.stels = 0),
-        };
-      });
-    }
     return this.setState((prevState) => {
       return {
-        stels: prevState.stels + 1,
-        dexterity: (prevState.dexterity = dexterity), // записываем в стейт значение, введенное пользователем
-      };
-    });
-  };
-
-  onChangeBow = (dexterity) => {
-    if (dexterity === this.state.bow || this.state.bow >= 5) {
-      return this.setState((prevState) => {
-        return {
-          bow: (prevState.bow = 0),
-        };
-      });
-    }
-    return this.setState((prevState) => {
-      return {
-        bow: prevState.bow + 1,
-        dexterity: (prevState.dexterity = dexterity), // записываем в стейт значение, введенное пользователем
+        ...prevState,
+        [name]: prevState[name] + 1,
+        [value]: baseParams,
       };
     });
   };
@@ -127,6 +99,7 @@ class Skills extends Component {
   };
 
   render() {
+    console.log('state', this.state);
     const { power, dexterity, intellect, charisma } = this.props;
     return (
       <div className={classes.skills}>
@@ -135,14 +108,14 @@ class Skills extends Component {
           onChangePower={this.onChangePower}
           power={power}
           attack={this.state.attack}
+          onChangeSkills={this.onChangeSkills}
         />
         <SkillsDexterity
           personageSkills={this.personageSkills}
-          onChangeStels={this.onChangeStels}
+          onChangeSkills={this.onChangeSkills}
           dexterity={dexterity}
           stels={this.state.stels}
           bow={this.state.bow}
-          onChangeBow={this.onChangeBow}
         />
         <SkillsIntellect dexterity={dexterity} />
       </div>
