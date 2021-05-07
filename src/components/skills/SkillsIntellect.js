@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+//scss
 import classes from './skills.module.scss';
-import trainability from './images/obuchaemost.png'; // обучаемость
-import survival from './images/vizhvanie.png'; // выживание
-import medicine from './images/medicy.png'; // медицина
+//images
+import trainability from '../../assets/images/skills/obuchaemost.png'; // обучаемость
+import survival from '../../assets/images/skills/vizhvanie.png'; // выживание
+import medicine from '../../assets/images/skills/medicy.png'; // медицина
 
 function SkillsIntellect({ dexterity }) {
   return (

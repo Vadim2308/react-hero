@@ -1,7 +1,9 @@
 import React from 'react';
+//scss
 import classes from './skills.module.scss';
-import stelsImage from './images/stels.png'; // стелс
-import bowImage from './images/strelbaluka.png'; // стрельба из лука
+//Images
+import stelsImage from '../../assets/images/skills/stels.png'; // стелс
+import bowImage from '../../assets/images/skills/strelbaluka.png'; // стрельба из лука
 
 function SkillsDexterity({ personageSkills, dexterity, stels, onChangeStels, bow, onChangeBow }) {
   const updatedDexterity = (dexterity) => {

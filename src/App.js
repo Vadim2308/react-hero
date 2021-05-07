@@ -11,7 +11,7 @@ import leftArrow from './assets/images/heroes/left-arrow.png';
 import rightArrow from './assets/images/heroes/right-arrow.png';
 //components
 import InfoHeroes from './components/info/InfoHeroes';
-import Heroes from './components/heroes/Heroes';
+import AllHeroes from './components/heroes/AllHeroes';
 
 class App extends React.Component {
   state = {
@@ -107,7 +107,7 @@ class App extends React.Component {
 
                 {this.allHeroes.map((hero, id) => {
                   if (this.state.currentHero === id + 1) {
-                    return <Heroes photo={hero.photo} id={id + 1} key={id} />;
+                    return <AllHeroes photo={hero.photo} id={id + 1} key={id} />;
                   }
                   return null;
                 })}

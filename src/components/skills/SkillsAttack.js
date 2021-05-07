@@ -1,6 +1,8 @@
 import React from 'react';
+//scss
 import classes from './skills.module.scss';
-import powersImage from './images/power.png';
+//Images
+import powersImage from '../../assets/images/skills/power.png';
 
 function SkillsAttack({ power, onChangePower, attack, personageSkills }) {
   const updatedPower = (power) => {

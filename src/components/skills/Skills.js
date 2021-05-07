@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+//scss
 import classes from './skills.module.scss';
+//components
 import SkillsAttack from './SkillsAttack';
 import SkillsDexterity from './SkillsDexterity';
 import SkillsIntellect from './SkillsIntellect';
@@ -52,6 +54,8 @@ class Skills extends Component {
       });
     }
   }
+
+  // Вот эти нижние 3 функции примерно одинаковые...принимают число, и если оно не удовлетворяют ифам, то делают +1 и записывают в стейт. Можно их как то сделать универсальными ?
 
   onChangePower = (power) => {
     if (power === this.state.attack || this.state.attack >= 5) {
