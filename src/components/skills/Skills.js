@@ -48,6 +48,10 @@ class Skills extends Component {
       trainability,
       survival,
       medicine,
+      intimidation,
+      insight,
+      appearance,
+      manipulation,
     } = this.state;
 
     if (attack > power) {
@@ -89,6 +93,34 @@ class Skills extends Component {
       return this.setState((prevState) => {
         return {
           medicine: (prevState.medicine = intellect),
+        };
+      });
+    }
+    if (intimidation > charisma) {
+      return this.setState((prevState) => {
+        return {
+          intimidation: (prevState.intimidation = charisma),
+        };
+      });
+    }
+    if (insight > charisma) {
+      return this.setState((prevState) => {
+        return {
+          insight: (prevState.insight = charisma),
+        };
+      });
+    }
+    if (appearance > charisma) {
+      return this.setState((prevState) => {
+        return {
+          appearance: (prevState.appearance = charisma),
+        };
+      });
+    }
+    if (manipulation > charisma) {
+      return this.setState((prevState) => {
+        return {
+          appearance: (prevState.manipulation = charisma),
         };
       });
     }
