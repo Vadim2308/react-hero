@@ -59,7 +59,7 @@ a {
     height: 60px;
     width: 60px;
     position: absolute;
-    left: 0px;
+    left: 50px;
     cursor: pointer;
     top: 210px;
   }
@@ -68,13 +68,13 @@ a {
     height: 60px;
     width: 60px;
     position: absolute;
-    right: 600px;
+    right: 650px;
     cursor: pointer;
     top: 210px;
   }
   &__info {
-    width: 50%;
-    height: 850px;
+    width: 60%;
+    height: 905px;
     border: 5px solid #fff;
     border-radius: 70px;
     padding: 10px;

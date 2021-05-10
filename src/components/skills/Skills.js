@@ -5,6 +5,7 @@ import classes from './skills.module.scss';
 import SkillsAttack from './SkillsAttack';
 import SkillsDexterity from './SkillsDexterity';
 import SkillsIntellect from './SkillsIntellect';
+import SkillsCharizma from './SkillsCharizma';
 
 class Skills extends Component {
   constructor(props) {
@@ -96,6 +97,9 @@ class Skills extends Component {
   onChangeSkills = (event, skills, baseParams, baseParamsString) => {
     const value = baseParamsString.toString();
     const name = event.target.name;
+    console.log(event);
+    console.log(value);
+    console.log(name);
     if (skills === baseParams || skills >= 5) {
       return this.setState((prevState) => {
         return {
@@ -136,7 +140,6 @@ class Skills extends Component {
   };
 
   render() {
-    console.log(this.state.dexSkills);
     const { power, dexterity, intellect, charisma } = this.props;
     return (
       <div className={classes.skills}>
@@ -160,6 +163,15 @@ class Skills extends Component {
           onChangeSkills={this.onChangeSkills}
           survival={this.state.survival}
           medicine={this.state.medicine}
+        />
+        <SkillsCharizma
+          personageSkills={this.personageSkills}
+          onChangeSkills={this.onChangeSkills}
+          charisma={charisma}
+          intimidation={this.state.intimidation}
+          insight={this.state.insight}
+          appearance={this.state.appearance}
+          manipulation={this.state.manipulation}
         />
       </div>
     );

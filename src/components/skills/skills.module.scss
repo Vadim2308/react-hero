@@ -32,22 +32,33 @@
   flex-direction: column;
   align-items: center;
   width: 33.3333%;
+  margin-bottom: 5px;
 }
 
 .dexterity {
   display: flex;
   justify-content: space-between;
   width: 66.6666%;
+  margin-bottom: 5px;
 
   &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
+    margin-bottom: 10px;
   }
 }
 
 .intellect {
   width: 100%;
   display: flex;
+  margin-bottom: 5px;
+}
+
+.charisma {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
 }
