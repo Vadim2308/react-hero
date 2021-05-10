@@ -32,6 +32,7 @@ class Skills extends Component {
   }
 
   componentDidUpdate() {
+    console.log('componentdidupdated');
     if (this.state.attack > this.state.power) {
       return this.setState((prevState) => {
         return {
@@ -99,8 +100,8 @@ class Skills extends Component {
   };
 
   render() {
-    console.log('state', this.state);
     const { power, dexterity, intellect, charisma } = this.props;
+    console.log(power, dexterity, intellect, charisma);
     return (
       <div className={classes.skills}>
         <SkillsAttack
