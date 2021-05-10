@@ -20,6 +20,10 @@ class Skills extends Component {
       trainability: 0, //обучаемость
       survival: 0, //выживание
       medicine: 0, // медицина
+      intimidation: 0, // запугивание
+      insight: 0, //проницательность
+      appearance: 0, //внешний вид
+      manipulation: 0, //манупилирование
       skills: {
         untrained: 'Нетренированный',
         beginner: 'Новичок',
@@ -31,26 +35,59 @@ class Skills extends Component {
     };
   }
 
-  componentDidUpdate() {
-    console.log('componentdidupdated');
-    if (this.state.attack > this.state.power) {
+  componentDidUpdate(prevProps, prevState) {
+    const {
+      power,
+      dexterity,
+      intellect,
+      charisma,
+      attack,
+      stels,
+      bow,
+      trainability,
+      survival,
+      medicine,
+    } = this.state;
+
+    if (attack > power) {
       return this.setState((prevState) => {
         return {
-          attack: (prevState.attack = this.state.power),
+          attack: (prevState.attack = power),
         };
       });
     }
-    if (this.state.stels > this.state.dexterity) {
+    if (stels > dexterity) {
       return this.setState((prevState) => {
         return {
-          stels: (prevState.stels = this.state.dexterity),
+          stels: (prevState.stels = dexterity),
         };
       });
     }
-    if (this.state.bow > this.state.dexterity) {
+    if (bow > dexterity) {
       return this.setState((prevState) => {
         return {
-          bow: (prevState.bow = this.state.dexterity),
+          bow: (prevState.bow = dexterity),
+        };
+      });
+    }
+    if (trainability > intellect) {
+      return this.setState((prevState) => {
+        return {
+          trainability: (prevState.trainability = intellect),
+        };
+      });
+    }
+    if (survival > intellect) {
+      return this.setState((prevState) => {
+        return {
+          survival: (prevState.survival = intellect),
+        };
+      });
+    }
+    if (medicine > intellect) {
+      return this.setState((prevState) => {
+        return {
+          medicine: (prevState.medicine = intellect),
         };
       });
     }
@@ -59,7 +96,6 @@ class Skills extends Component {
   onChangeSkills = (event, skills, baseParams, baseParamsString) => {
     const value = baseParamsString.toString();
     const name = event.target.name;
-
     if (skills === baseParams || skills >= 5) {
       return this.setState((prevState) => {
         return {
@@ -68,7 +104,6 @@ class Skills extends Component {
         };
       });
     }
-
     return this.setState((prevState) => {
       return {
         ...prevState,
@@ -79,34 +114,34 @@ class Skills extends Component {
   };
 
   personageSkills = (level) => {
+    const { untrained, beginner, apprentice, adept, expert, master } = this.state.skills;
     if (level === 0) {
-      return this.state.skills.untrained;
+      return untrained;
     }
     if (level === 1) {
-      return this.state.skills.beginner;
+      return beginner;
     }
     if (level === 2) {
-      return this.state.skills.apprentice;
+      return apprentice;
     }
     if (level === 3) {
-      return this.state.skills.adept;
+      return adept;
     }
     if (level === 4) {
-      return this.state.skills.expert;
+      return expert;
     }
     if (level === 5) {
-      return this.state.skills.master;
+      return master;
     }
   };
 
   render() {
+    console.log(this.state.dexSkills);
     const { power, dexterity, intellect, charisma } = this.props;
-    console.log(power, dexterity, intellect, charisma);
     return (
       <div className={classes.skills}>
         <SkillsAttack
           personageSkills={this.personageSkills}
-          onChangePower={this.onChangePower}
           power={power}
           attack={this.state.attack}
           onChangeSkills={this.onChangeSkills}
@@ -118,7 +153,14 @@ class Skills extends Component {
           stels={this.state.stels}
           bow={this.state.bow}
         />
-        <SkillsIntellect dexterity={dexterity} />
+        <SkillsIntellect
+          personageSkills={this.personageSkills}
+          intellect={intellect}
+          trainability={this.state.trainability}
+          onChangeSkills={this.onChangeSkills}
+          survival={this.state.survival}
+          medicine={this.state.medicine}
+        />
       </div>
     );
   }

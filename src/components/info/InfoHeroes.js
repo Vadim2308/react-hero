@@ -30,11 +30,8 @@ class InfoHeroes extends Component {
       evasion: this.state.dexterity + 10, // уклонение
       energy: this.state.dexterity + this.state.intellect, //энергичность
     };
-
     const disableInfo = this.props.disableInfo;
-
-    console.log(this.state);
-
+    const { power, dexterity, intellect, charisma } = this.state;
     return (
       <div className={classes.about}>
         <h2 className={classes.name}>Введите имя</h2>
@@ -44,7 +41,7 @@ class InfoHeroes extends Component {
           className={classes.input}
           onChange={(event) => this.inputOnChange(event)}
           name="power"
-          value={this.state.power}
+          value={power}
           type="number"
           placeholder="Сила"
           min="0"
@@ -57,7 +54,7 @@ class InfoHeroes extends Component {
           className={classes.input}
           onChange={(event) => this.inputOnChange(event)}
           name="dexterity"
-          value={this.state.dexterity}
+          value={dexterity}
           type="number"
           placeholder="Ловкость"
           min="0"
@@ -70,7 +67,7 @@ class InfoHeroes extends Component {
           className={classes.input}
           onChange={(event) => this.inputOnChange(event)}
           name="intellect"
-          value={this.state.intellect}
+          value={intellect}
           type="number"
           placeholder="Интелект"
           min="0"
@@ -83,23 +80,19 @@ class InfoHeroes extends Component {
           className={classes.input}
           onChange={(event) => this.inputOnChange(event)}
           name="charisma"
-          value={this.state.charisma}
+          value={charisma}
           type="number"
           placeholder="Харизма"
           min="0"
           max="10"
           step="1"
           disabled={disableInfo}></input>
+
         <div className={classes.additional}>
           <h2 className={classes.power}>Жизненная сила {`: ${currentParams.liveForce}`}</h2>
           <h2 className={classes.power}>Уклонение {`: ${currentParams.evasion}`}</h2>
           <h2 className={classes.power}>Энергичность {`: ${currentParams.energy}`}</h2>
-          <Skills
-            power={this.state.power}
-            dexterity={this.state.dexterity}
-            intellect={this.state.intellect}
-            charisma={this.state.charisma}
-          />
+          <Skills power={power} dexterity={dexterity} intellect={intellect} charisma={charisma} />
         </div>
       </div>
     );
