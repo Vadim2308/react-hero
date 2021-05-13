@@ -1,6 +1,7 @@
 import classes from './InfoHeroes.module.scss';
 import React, { Component } from 'react';
 import Skills from '../skills/Skills';
+import Damage from '../heroes/Damage';
 
 class InfoHeroes extends Component {
   state = {
@@ -93,6 +94,7 @@ class InfoHeroes extends Component {
           <h2 className={classes.power}>Уклонение {`: ${currentParams.evasion}`}</h2>
           <h2 className={classes.power}>Энергичность {`: ${currentParams.energy}`}</h2>
           <Skills power={power} dexterity={dexterity} intellect={intellect} charisma={charisma} />
+          <Damage lifeForce={currentParams.liveForce} />
         </div>
       </div>
     );
