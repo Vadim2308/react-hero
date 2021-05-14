@@ -1,35 +1,6 @@
 import React, { Component } from 'react';
 import classes from './heroes.module.scss';
 
-// function Damage({ lifeForce }) {
-//   lifeForce = lifeForce * 10;
-
-//   let defaultLive = 100;
-
-//   function renderHP(lifeForce) {
-//     let currentlifeForce = lifeForce;
-//     return function () {
-//       currentlifeForce = currentlifeForce - 1;
-//       console.log(currentlifeForce);
-//       return currentlifeForce;
-//     };
-//   }
-//   const changedHP = renderHP(lifeForce);
-//   return (
-//     <div className={classes.bar}>
-//       <div
-//         id="progressbar"
-//         className={classes.health}
-//         style={{ width: changedHP(lifeForce) + '%' }}></div>
-//       <button onClick={() => changedHP(lifeForce)} className={classes.damage}>
-//         Damage
-//       </button>
-//     </div>
-//   );
-// }
-
-// export default Damage;
-
 class Damage extends Component {
   constructor(props) {
     super(props);

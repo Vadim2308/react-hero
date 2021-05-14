@@ -14,11 +14,6 @@ import InfoHeroes from './components/info/InfoHeroes';
 import AllHeroes from './components/heroes/AllHeroes';
 
 class App extends React.Component {
-  state = {
-    currentHero: 1,
-    disableInfo: true, // true
-  };
-
   allHeroes = [
     {
       id: 1,
@@ -37,6 +32,11 @@ class App extends React.Component {
       photo: hero4,
     },
   ];
+
+  state = {
+    currentHero: 1,
+    disableInfo: true, // true
+  };
 
   nextHero = () => {
     if (this.state.disableInfo) {
@@ -86,6 +86,7 @@ class App extends React.Component {
   };
 
   render() {
+    let currentPhotoHero = this.allHeroes[this.state.currentHero - 1].photo;
     return (
       <>
         <div className={classes.main}>
@@ -117,7 +118,11 @@ class App extends React.Component {
                 </button>
               </div>
               <div className={classes.main__info}>
-                <InfoHeroes disableInfo={this.state.disableInfo} />
+                <InfoHeroes
+                  disableInfo={this.state.disableInfo}
+                  photo={currentPhotoHero}
+                  id={this.state.currentHero}
+                />
               </div>
             </div>
           </div>
