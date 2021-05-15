@@ -28,7 +28,7 @@
   position: absolute;
   top: 31px;
   z-index: 3;
-  left: 293px;
+  left: 162px;
   padding: 10px 40px;
   margin: 0px 10px 10px 0px;
   float: left;
@@ -41,4 +41,36 @@
   border-bottom: 5px solid #2980b9;
   text-shadow: 0px -2px #2980b9;
   cursor: pointer;
+}
+
+.save {
+  display: flex;
+  flex-direction: column;
+}
+
+.save_btn {
+  position: absolute;
+  bottom: 297px;
+  z-index: 3;
+  left: 427px;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+  border-radius: 10px;
+  font-family: 'Pacifico', cursive;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #4707be;
+  border-bottom: 5px solid #2980b9;
+  text-shadow: 0px -2px #2980b9;
+  cursor: pointer;
+}
+
+.save_header {
+  position: absolute;
+  bottom: 257px;
+  z-index: 3;
+  left: 220px;
+  color: #fff;
 }

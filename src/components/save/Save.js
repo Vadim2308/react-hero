@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-
-// function Save(props) {
-//   console.log(props);
-//   return <></>;
-// }
+import classes from '../heroes/heroes.module.scss';
 
 class Save extends Component {
   constructor(props) {
@@ -25,7 +21,12 @@ class Save extends Component {
 
   render() {
     console.log(this.state);
-    return <></>;
+    return (
+      <div className={classes.save}>
+        <button className={classes.save_btn}>Save</button>
+        <h1 className={classes.save_header}>Сохраненные герои:</h1>
+      </div>
+    );
   }
 }
 
