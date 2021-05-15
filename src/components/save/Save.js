@@ -11,9 +11,7 @@ class Save extends Component {
     };
   }
 
-  onLoadHero() {
-    console.log(localStorage);
-  }
+  onLoadHero() {}
 
   onSaveHero() {
     // Object.keys(this.props).map((key) => {
@@ -52,15 +50,13 @@ class Save extends Component {
   }
 
   render() {
+    // console.log(this.props);
     return (
       <div className={classes.save}>
         <button onClick={() => this.onSaveHero()} className={classes.save_btn}>
           Save
         </button>
-        <h1 className={classes.save_hero}>
-          Сохраненные герои:
-          <img onClick={() => this.onLoadHero()} className={classes.loading} src={LoadImg}></img>
-        </h1>
+        <h1 className={classes.save_hero}>Сохраненные герои:</h1>
       </div>
     );
   }

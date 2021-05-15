@@ -10,7 +10,6 @@ import Save from '../save/Save';
 
 class Skills extends Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       power: this.props.power,
@@ -171,7 +170,6 @@ class Skills extends Component {
   };
 
   render() {
-    console.log(this.props);
     const { id, photo, name, power, dexterity, intellect, charisma } = this.props;
     return (
       <div className={classes.skills}>

@@ -12,6 +12,7 @@ import rightArrow from './assets/images/heroes/right-arrow.png';
 //components
 import InfoHeroes from './components/info/InfoHeroes';
 import AllHeroes from './components/heroes/AllHeroes';
+import Download from './components/download/download';
 
 class App extends React.Component {
   allHeroes = [
@@ -36,6 +37,14 @@ class App extends React.Component {
   state = {
     currentHero: 1,
     disableInfo: true, // true
+  };
+
+  onChangeMainState = (id) => {
+    this.setState((prevState) => {
+      return {
+        currentHero: Number((prevState.currentHero = id)),
+      };
+    });
   };
 
   nextHero = () => {
@@ -86,6 +95,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     let currentPhotoHero = this.allHeroes[this.state.currentHero - 1].photo;
     return (
       <>
@@ -123,6 +133,7 @@ class App extends React.Component {
                   photo={currentPhotoHero}
                   id={this.state.currentHero}
                 />
+                <Download onChangeMainState={this.onChangeMainState} />
               </div>
             </div>
           </div>

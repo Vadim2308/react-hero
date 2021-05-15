@@ -36,13 +36,12 @@ class InfoHeroes extends Component {
   };
 
   render() {
-    console.log(this.props);
     const currentParams = {
       liveForce: this.state.power + 3, // жизненная сила
       evasion: this.state.dexterity + 10, // уклонение
       energy: this.state.dexterity + this.state.intellect, //энергичность
     };
-    const { disableInfo, photo, id } = this.props;
+    const { disableInfo, photo, id, onChangeMainState } = this.props;
     const { name, power, dexterity, intellect, charisma } = this.state;
     return (
       <div className={classes.about}>
