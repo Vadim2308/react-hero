@@ -36,6 +36,7 @@ class InfoHeroes extends Component {
   };
 
   render() {
+    console.log(this.props);
     const currentParams = {
       liveForce: this.state.power + 3, // жизненная сила
       evasion: this.state.dexterity + 10, // уклонение
