@@ -12,6 +12,18 @@ class InfoHeroes extends Component {
     charisma: 0,
   };
 
+  onChangeStateBase = () => {
+    this.setState(() => {
+      return {
+        name: String(localStorage.getItem('name')),
+        power: Number(localStorage.getItem('power')),
+        dexterity: Number(localStorage.getItem('dexterity')),
+        intellect: Number(localStorage.getItem('intellect')),
+        charisma: Number(localStorage.getItem('charisma')),
+      };
+    });
+  };
+
   inputOnChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -117,6 +129,8 @@ class InfoHeroes extends Component {
             dexterity={dexterity}
             intellect={intellect}
             charisma={charisma}
+            onChangeMainState={onChangeMainState}
+            onChangeStateBase={this.onChangeStateBase}
           />
           <Damage lifeForce={currentParams.liveForce} />
         </div>

@@ -12,7 +12,6 @@ import rightArrow from './assets/images/heroes/right-arrow.png';
 //components
 import InfoHeroes from './components/info/InfoHeroes';
 import AllHeroes from './components/heroes/AllHeroes';
-import Download from './components/download/download';
 
 class App extends React.Component {
   allHeroes = [
@@ -37,12 +36,16 @@ class App extends React.Component {
   state = {
     currentHero: 1,
     disableInfo: true, // true
+    buttonText: 'Выбрать',
   };
 
-  onChangeMainState = (id) => {
+  onChangeMainState = () => {
+    let id = localStorage.getItem('id');
     this.setState((prevState) => {
       return {
         currentHero: Number((prevState.currentHero = id)),
+        disableInfo: (prevState.disableInfo = false),
+        buttonText: (prevState.buttonText = 'Изменить'),
       };
     });
   };
@@ -90,6 +93,7 @@ class App extends React.Component {
     this.setState((prevState) => {
       return {
         disableInfo: !prevState.disableInfo,
+        buttonText: event.target.innerHTML,
       };
     });
   };
@@ -124,7 +128,7 @@ class App extends React.Component {
                 })}
 
                 <button className={classes.choose} onClick={this.heroIsChoosen}>
-                  Выбрать
+                  {this.state.buttonText}
                 </button>
               </div>
               <div className={classes.main__info}>
@@ -132,8 +136,8 @@ class App extends React.Component {
                   disableInfo={this.state.disableInfo}
                   photo={currentPhotoHero}
                   id={this.state.currentHero}
+                  onChangeMainState={this.onChangeMainState}
                 />
-                <Download onChangeMainState={this.onChangeMainState} />
               </div>
             </div>
           </div>

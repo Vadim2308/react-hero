@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from '../heroes/heroes.module.scss';
 import LoadImg from '../../assets/images/skills/power.png';
 import InfoHeroes from '../info/InfoHeroes';
+import Download from '../download/Download';
 
 class Save extends Component {
   constructor(props) {
@@ -11,14 +12,12 @@ class Save extends Component {
     };
   }
 
-  onLoadHero() {}
-
   onSaveHero() {
     // Object.keys(this.props).map((key) => {
     //   localStorage.setItem(key, 'test');
     // });
 
-    // сделать рефактор это колбасы /////
+    // сделать рефактор этой колбасы через JSON /////
 
     localStorage.setItem('id', this.props.id);
     localStorage.setItem('photo', this.props.photo);
@@ -50,13 +49,12 @@ class Save extends Component {
   }
 
   render() {
-    // console.log(this.props);
     return (
       <div className={classes.save}>
-        <button onClick={() => this.onSaveHero()} className={classes.save_btn}>
+        <button onClick={this.onSaveHero.bind(this)} className={classes.save_btn}>
           Save
         </button>
-        <h1 className={classes.save_hero}>Сохраненные герои:</h1>
+        <h1 className={classes.save_hero}>Загрузить сохраненные параметры:</h1>
       </div>
     );
   }

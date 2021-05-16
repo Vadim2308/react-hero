@@ -7,6 +7,7 @@ import SkillsDexterity from './SkillsDexterity';
 import SkillsIntellect from './SkillsIntellect';
 import SkillsCharizma from './SkillsCharizma';
 import Save from '../save/Save';
+import Download from '../download/Download';
 
 class Skills extends Component {
   constructor(props) {
@@ -54,6 +55,17 @@ class Skills extends Component {
       appearance,
       manipulation,
     } = this.state;
+
+    if (this.props !== prevProps) {
+      return this.setState(() => {
+        return {
+          power: this.props.power,
+          dexterity: this.props.dexterity,
+          intellect: this.props.intellect,
+          charisma: this.props.charisma,
+        };
+      });
+    }
 
     if (attack > power) {
       return this.setState((prevState) => {
@@ -127,6 +139,23 @@ class Skills extends Component {
     }
   }
 
+  onChangeStateFromDownload = () => {
+    return this.setState(() => {
+      return {
+        attack: Number(localStorage.getItem('attack')),
+        stels: Number(localStorage.getItem('stels')),
+        bow: Number(localStorage.getItem('bow')),
+        trainability: Number(localStorage.getItem('trainability')),
+        survival: Number(localStorage.getItem('survival')),
+        medicine: Number(localStorage.getItem('medicine')),
+        intimidation: Number(localStorage.getItem('intimidation')),
+        insight: Number(localStorage.getItem('insight')),
+        appearance: Number(localStorage.getItem('appearance')),
+        manipulation: Number(localStorage.getItem('manipulation')),
+      };
+    });
+  };
+
   onChangeSkills = (event, skills, baseParams, baseParamsString) => {
     const value = baseParamsString.toString();
     const name = event.target.name;
@@ -170,7 +199,19 @@ class Skills extends Component {
   };
 
   render() {
-    const { id, photo, name, power, dexterity, intellect, charisma } = this.props;
+    console.log('this props', this.props);
+    console.log('this state', this.state);
+    const {
+      id,
+      photo,
+      name,
+      power,
+      dexterity,
+      intellect,
+      charisma,
+      onChangeMainState,
+      onChangeStateBase,
+    } = this.props;
     return (
       <div className={classes.skills}>
         <SkillsAttack
@@ -204,13 +245,13 @@ class Skills extends Component {
           manipulation={this.state.manipulation}
         />
         <Save
-          id={this.props.id}
-          photo={this.props.photo}
-          name={this.props.name}
-          power={this.props.power}
-          dexterity={this.props.dexterity}
-          intellect={this.props.intellect}
-          charisma={this.props.charisma}
+          id={id}
+          photo={photo}
+          name={name}
+          power={power}
+          dexterity={dexterity}
+          intellect={intellect}
+          charisma={charisma}
           attack={this.state.attack}
           stels={this.state.stels}
           bow={this.state.bow}
@@ -221,6 +262,11 @@ class Skills extends Component {
           insight={this.state.insight}
           appearance={this.state.appearance}
           manipulation={this.state.manipulation}
+        />
+        <Download
+          onChangeStateSkills={this.onChangeStateFromDownload}
+          onChangeMainState={onChangeMainState}
+          onChangeStateBase={onChangeStateBase}
         />
       </div>
     );

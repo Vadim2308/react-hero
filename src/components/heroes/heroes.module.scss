@@ -79,15 +79,28 @@
   position: absolute;
   bottom: 257px;
   z-index: 3;
-  left: 220px;
+  left: 130px;
   color: #fff;
 }
 
 .loading {
   position: absolute;
-  bottom: 147px;
+  bottom: 174px;
   left: 300px;
   width: 80px;
   height: 80px;
   cursor: pointer;
+}
+
+.loading_name {
+  position: absolute;
+  bottom: 150px;
+  left: 252px;
+  color: #fff;
+
+  &__active {
+    color: #e1ca01;
+    font-weight: bold;
+    font-size: 25px;
+  }
 }
