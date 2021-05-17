@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Создай своего RPG героя с возможностью его внешней кастомизации, а также кастомизации его скиллов на React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Это веб-приложение (SPA), при помощи которого пользователь может редактировать своего персонажа в абстрактной RPG-игре.
+Stack:HTML/SCSS/ReactJS
 
-## Available Scripts
+## MVP:
+- Пользователь может задать и изменить имя своего персонажа;
+- Пользователь может задать и изменять базовые параметры своего персонажа
+### Базовые параметры: Сила, Ловкость, Интелект, Харизма
+По умолчанию каждый параметр равен 0
+У персонажа есть параметры, которые рассчитываются на основе базовых:
+Жизненная сила:
+-Рассчитывается как 3 + Сила
+-Когда персонаж получает Урон, теряется одна единица жизненной силы
+-Есть возможность получить урон
+Уклонение: 10 + Ловкость
+Энергичность: Ловкость + Интелект
+### У персонажа есть набор скиллов, которые можно тренировать:
+У скиллов есть уровни:
+Уровень 0: Нетренированный
+Уровень 1: Новичок
+Уровень 2: Ученик
+Уровень 3: Адепт
+Уровень 4: Эксперт
+Уровень 5: Мастер
+Каждый скилл привязан к базовому параметру. Уровень скилла не может быть выше, чем значение базового параметра. 
+Например, если Сила = 3, Уровень Атаки не может подняться выше 3.
+### Список базовых параметров и соответствующих скиллов:
+-Сила
+-Атака
+-Ловкость
+-Стелс
+-Стрельба из лука
+-Интеллект
+-Обучаемость
+-Выживание
+-Медицина
+-Харизма
+-Запугивание
+-Проницательность
+-Внешний вид
+-Манипулирование
 
-In the project directory, you can run:
+Пользователь может сохранить/загрузить своего персонажа
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
