@@ -1,4 +1,4 @@
-import classes from './heroes.module.scss';
+import classes from '../../styles/heroes.module.scss';
 import React from 'react';
 
 function Hero({ photo, id }) {

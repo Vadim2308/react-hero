@@ -1,6 +1,6 @@
 import React from 'react';
 //scss
-import classes from './skills.module.scss';
+import classes from '../../styles/skills.module.scss';
 //Images
 import powersImage from '../../assets/images/skills/power.png';
 

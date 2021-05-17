@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './heroes.module.scss';
+import classes from '../../styles/heroes.module.scss';
 
 class Damage extends Component {
   constructor(props) {

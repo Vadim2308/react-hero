@@ -1,6 +1,6 @@
 import React from 'react';
 //scss
-import classes from './skills.module.scss';
+import classes from '../../styles/skills.module.scss';
 //images
 import trainabilytyImage from '../../assets/images/skills/obuchaemost.png'; // обучаемость
 import survivalImage from '../../assets/images/skills/vizhvanie.png'; // выживание

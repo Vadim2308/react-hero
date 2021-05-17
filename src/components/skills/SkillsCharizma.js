@@ -1,6 +1,6 @@
 import React from 'react';
 //scss
-import classes from './skills.module.scss';
+import classes from '../../styles/skills.module.scss';
 //images
 import intimidationImage from '../../assets/images/skills/zapugivanie.png'; //запугивание
 import insightImage from '../../assets/images/skills/pronicatelnost.png'; //Проницательность

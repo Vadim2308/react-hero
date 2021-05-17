@@ -1,7 +1,6 @@
 import React from 'react';
 //scss
-import './App.module.scss';
-import classes from './App.module.scss';
+import classes from './styles/App.module.scss';
 //images
 import hero1 from './assets/images/heroes/hero1.png';
 import hero2 from './assets/images/heroes/hero2.png';
@@ -99,7 +98,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     let currentPhotoHero = this.allHeroes[this.state.currentHero - 1].photo;
     return (
       <>

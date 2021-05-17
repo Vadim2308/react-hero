@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 //scss
-import classes from './skills.module.scss';
+import classes from '../../styles/skills.module.scss';
 //Images
 import stelsImage from '../../assets/images/skills/stels.png'; // стелс
 import bowImage from '../../assets/images/skills/strelbaluka.png'; // стрельба из лука

@@ -1,4 +1,4 @@
-import classes from './InfoHeroes.module.scss';
+import classes from '../../styles/InfoHeroes.module.scss';
 import React, { Component } from 'react';
 import Skills from '../skills/Skills';
 import Damage from '../heroes/Damage';

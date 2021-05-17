@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //scss
-import classes from './skills.module.scss';
+import classes from '../../styles/skills.module.scss';
 //components
 import SkillsAttack from './SkillsAttack';
 import SkillsDexterity from './SkillsDexterity';
@@ -199,8 +199,6 @@ class Skills extends Component {
   };
 
   render() {
-    console.log('this props', this.props);
-    console.log('this state', this.state);
     const {
       id,
       photo,
